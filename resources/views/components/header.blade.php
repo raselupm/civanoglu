@@ -1,4 +1,4 @@
-<div class="fixed w-full py-4 px-12 flex justify-between items-center z-30">
+<div class="fixed w-full py-4 px-12 flex justify-between items-center z-30 sticky-header">
     <div class="min-w-max">
         <img width="100" src="/img/logo.jpeg" alt="">
     </div>

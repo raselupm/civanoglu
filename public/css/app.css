@@ -32197,9 +32197,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700
 }
 
-.fullwidth-btn {
+.btn {
   display: inline-block;
-  width: 100%;
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
   background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
@@ -32210,6 +32209,29 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+.fullwidth-btn {
+  width: 100%;
+  display: inline-block;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity))
+}
+
+.sticky-header-active {
+  background-color: #fff;
+}
+
+.sticky-header-active a{
+  color:#333
 }
 
 @media (min-width: 640px) {

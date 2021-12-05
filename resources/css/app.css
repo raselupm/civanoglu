@@ -51,6 +51,16 @@ h1, h2, h3, h4, h5, h6 {
     @apply font-bold text-center text-4xl mb-10
 }
 
-.fullwidth-btn {
-    @apply bg-gray-800 text-white px-6 py-2 rounded w-full inline-block text-center
+.btn {
+    @apply bg-gray-800 text-white px-6 py-2 rounded inline-block text-center
 }
+
+.fullwidth-btn {
+    @apply btn w-full
+}
+
+.sticky-header-active {
+    background-color: #fff;
+}
+
+.sticky-header-active a{color:#333}
