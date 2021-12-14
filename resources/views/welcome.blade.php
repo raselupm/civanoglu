@@ -156,10 +156,10 @@
     <!-- Last Added Objects -->
     <div class="container py-14">
         <h2 class="section-heading">Last added objusts</h2>
-        <div class="flex -mx-2 justify-between mt-10">
+        <div class="flex flex-wrap -mx-2 justify-between mt-10">
 
             @foreach($latest_properties as $property)
-            <div class="flex-1 mx-2 shadow-lg relative rounded-md">
+            <div class="flex-1 mx-2 shadow-lg relative rounded-md mb-6">
                 <a href=""
                    class="absolute left-3 w-9 h-9 leading-10 self-center text-base top-3 bg-black text-white bg-opacity-25 text-center hover:bg-yellow-500 hover:text-white duration-200 rounded-full text-base"><i
                         class="fa fa-heart-o"></i></a>
