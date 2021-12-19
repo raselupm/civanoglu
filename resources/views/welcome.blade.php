@@ -11,46 +11,7 @@
     <div class="-mt-10">
         <div class="container">
             <div class="rounded-lg bg-white p-4 relative z-20 shadow-lg">
-                <form action="#" method="GET" class="flex justify-between">
-                    @csrf
-                    <div class="flex w-7/12 justify-between items-center">
-                        <div class="flex flex-col mx-3">
-                            <select name="" id="" class="border-0 focus:ring-0">
-                                <option value="#">Buy or Rent</option>
-                                <option value="#">Buy</option>
-                                <option value="#">Rent</option>
-                            </select>
-                        </div>
-                        <div class="py-3 self-center border-gray-500 border"></div>
-                        <div class="flex flex-col mx-3">
-                            <select name="" id="" class="border-0 focus:ring-0">
-                                <option value="#">Type</option>
-                                <option value="#">Buy</option>
-                                <option value="#">Rent</option>
-                            </select>
-                        </div>
-                        <div class="py-3 self-center border-gray-500 border"></div>
-                        <div class="flex flex-col mx-3">
-                            <select name="" id="" class="border-0 focus:ring-0">
-                                <option value="#">Price</option>
-                                <option value="#">Buy</option>
-                                <option value="#">Rent</option>
-                            </select>
-                        </div>
-                        <div class="py-3 self-center border-gray-500 border"></div>
-                        <div class="flex flex-col mx-3">
-                            <select name="" id="" class="border-0 focus:ring-0">
-                                <option value="#">Bedrooms</option>
-                                <option value="#">Buy</option>
-                                <option value="#">Rent</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center w-5/12 ml-5">
-                        <input type="search" placeholder="Try to search for something" class="rounded-lg px-4 py-2 w-full mr-4 focus:border-gray-700 focus:ring-0">
-                        <button type="submit" class="btn">Search</button>
-                    </div>
-                </form>
+                @include('components.property-search-form')
             </div>
 
         </div>
@@ -156,27 +117,10 @@
     <!-- Last Added Objects -->
     <div class="container py-14">
         <h2 class="section-heading">Last added objusts</h2>
-        <div class="flex flex-wrap -mx-2 justify-between mt-10">
+        <div class="flex flex-wrap -mx-2 mt-10">
 
             @foreach($latest_properties as $property)
-            <div class="flex-1 mx-2 shadow-lg relative rounded-md mb-6">
-                <a href=""
-                   class="absolute left-3 w-9 h-9 leading-10 self-center text-base top-3 bg-black text-white bg-opacity-25 text-center hover:bg-yellow-500 hover:text-white duration-200 rounded-full text-base"><i
-                        class="fa fa-heart-o"></i></a>
-                <div class="py-20 bg-center" style="background-image: url('/img/hero-bg.jpg')"></div>
-                <div class="p-3">
-                    <h2 class="leading-0 text-base">{{$property->name}}</h2>
-                    <h3 class="text-2xl py-3">{{$property->price}} TL</h3>
-                    <div class="border-t-2">
-                        <ul class="flex items-center -mx-1 my-4">
-                            <li class="px-2 py-1 bg-blue-50 rounded-md text-xs mx-1 shadow-sm">7 bedrooms</li>
-                            <li class="px-2 py-1 bg-blue-50 rounded-md text-xs mx-1 shadow-sm">5 bedrooms</li>
-                            <li class="px-2 py-1 bg-blue-50 rounded-md text-xs mx-1 shadow-sm">15000 ft<sup>2</sup></li>
-                        </ul>
-                        <a href="{{route('single-property', $property->id)}}" class="btn w-full text-center">More details</a>
-                    </div>
-                </div>
-            </div>
+                @include('components.single-property-card', ['property' => $property, 'width' => 'w-1/4'])
             @endforeach
 
 
