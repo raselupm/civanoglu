@@ -13,6 +13,11 @@
         </ul>
     </div>
 
+    <div class="min-w-max mr-10 text-2xl">
+        <a class="inline-block mr-5 text-white" href="?currency=usd">$</a>
+        <a class="inline-block mr-5 text-white" href="?currency=lira">₺</a>
+    </div>
+
     <div class="min-w-max text-3xl">
         <a href="">🇺🇸</a>
         <a href="">🇹🇷</a>

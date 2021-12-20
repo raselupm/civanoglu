@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Location;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class PropertyController extends Controller
 {
@@ -55,4 +56,5 @@ class PropertyController extends Controller
 
         return view('property.index', ['latest_properties' => $latest_properties, 'locations' => $locations]);
     }
+
 }
