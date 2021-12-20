@@ -8,6 +8,18 @@
                 <option {{request('sale') == '0' ? 'selected="selected"' : ''}} value="0">Rent</option>
             </select>
         </div>
+
+        <div class="py-3 self-center border-gray-500 border"></div>
+        <div class="flex flex-col mx-3">
+            <label for="location">Location</label>
+            <select id="location" name="location" class="border-0 focus:ring-0">
+                <option value="">Location</option>
+                @foreach($locations as $location)
+                    <option {{request('location') == $location->id ? 'selected="selected"' : ''}} value="{{$location->id}}">{{$location->name}}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="py-3 self-center border-gray-500 border"></div>
         <div class="flex flex-col mx-3">
             <label for="type">Type</label>
@@ -45,7 +57,7 @@
         </div>
     </div>
     <div class="flex justify-between items-center w-5/12 ml-5">
-        <input type="search" placeholder="Try to search for something" class="rounded-lg px-4 py-2 w-full mr-4 focus:border-gray-700 focus:ring-0">
+        <input name="property_name" value="{{request('property_name')}}" type="search" placeholder="Try to search for something" class="rounded-lg px-4 py-2 w-full mr-4 focus:border-gray-700 focus:ring-0">
         <button type="submit" class="btn">Search</button>
     </div>
 </form>
