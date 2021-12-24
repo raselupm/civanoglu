@@ -175,32 +175,48 @@
                 <div class="px-4 py-5 text-left bg-gray-300 my-5">
                     <h1 class="text-2xl font-normal leading-none mb-5">Enquire about this property</h1>
 
-                    <form action="#" method="POST" enctype="multipart/form-data">
+                    @if(Session::get('message'))
+                    <p class="mb-6 p-3 bg-green-100 text-green-700">{{Session::get('message')}}</p>
+                    @endif
+
+                    <form action="{{route('property-inquiry', $property->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="">
-                            <label class="inputLabel" for="name">Name <span
-                                    class="text-red-800 font-serif">*</span></label>
-                            <input class="inputField" type="text" id="name" name="name" placeholder="First Name">
+                            <label class="inputLabel" for="name">Name <span class="text-red-800 font-serif">*</span></label>
+                            <input class="inputField" type="text" id="name" name="name" placeholder="First Name" value="{{old('name')}}" required>
+
+                            @error('name')
+                            <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
+                            @enderror
                         </div>
 
                         <div class="mt-5">
                             <label class="inputLabel" for="phone">Phone <span
                                     class="text-red-800 font-serif">*</span></label>
-                            <input class="inputField" type="text" id="phone" name="phone" placeholder="Phone">
+                            <input class="inputField" type="text" id="phone" name="phone" placeholder="Phone" value="{{old('phone')}}" required>
+
+                            @error('phone')
+                            <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
+                            @enderror
                         </div>
 
                         <div class="mt-5">
                             <label class="inputLabel" for="email">Email <span
                                     class="text-red-800 font-serif">*</span></label>
-                            <input class="inputField" type="email" id="email" name="email" placeholder="E-mail">
+                            <input class="inputField" type="email" id="email" name="email" placeholder="E-mail" value="{{old('email')}}" required>
+
+                            @error('email')
+                            <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
+                            @enderror
                         </div>
 
                         <div class="mt-5">
-                            <label class="inputLabel" for="message">Message <span
-                                    class="text-red-800 font-serif">*</span></label>
-                            <textarea class="inputField" id="message" name="message" rows="4"
-                                      placeholder="I'm interested in this property"></textarea>
+                            <label class="inputLabel" for="message">Message <span class="text-red-800 font-serif">*</span></label>
+                            <textarea class="inputField" id="message" name="message" rows="4" placeholder="I'm interested in this property" required>{{old('message')}}</textarea>
+                            @error('message')
+                            <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
+                            @enderror
                         </div>
                         <div class="mt-5">
                             <button type="submit"
