@@ -14,7 +14,26 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <form action="{{route('create-property')}}" method="post" class="p-6 bg-white border-b border-gray-200"> @csrf
+                <div class="p-6">
+                    <h3>Gallery images</h3>
+
+                    <div class="flex flex-wrap mt-3">
+                        @foreach($property->gallery as $gallery)
+                            <div style="min-width: 100px" class="mr-4 relative mb-4 border border-gray-100">
+                                <div class="flex items-center justify-center h-full">
+                                    <img style="max-width: 100px;" src="/uploads/{{$gallery->name}}" alt="">
+                                </div>
+
+                                <form method="post" action="{{route('delete-media', $gallery->id)}}" onsubmit="return confirm('Do you really want to delete the image?');" class="absolute right-0 top-0"> @csrf
+                                    <button style="font-size: 8px" type="submit" class="text-white bg-red-600 px-3 py-1">Delete</button>
+                                </form>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+
+                <form action="{{route('update-property', $property->id)}}" method="post" class="p-6 bg-white border-b border-gray-200"> @csrf
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
                             <label class="civanoglu-label" for="name">Title <span class="required-text">*</span></label>
@@ -39,11 +58,20 @@
                         <label class="civanoglu-label" for="featured_image">Featured Image <span class="required-text">*</span></label>
                         <input class="civanoglu-input" type="file" id="featured_image" name="featured_image" required>
 
-                        <p>
-                            <img src="" alt="">
-                        </p>
+                        <div class="mt-3">
+                            <img src="/uploads/{{$property->featured_image}}" alt="">
+                        </div>
 
                         @error('featured_image')
+                        <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="civanoglu-label" for="gallery_images">Gallery images <span class="required-text">*</span></label>
+                        <input class="civanoglu-input" type="file" id="gallery_images" name="gallery_images[]" multiple required>
+
+                        @error('gallery_images')
                         <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                         @enderror
                     </div>

@@ -36,8 +36,10 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/dashboard/properties', [DashboardController::class, 'properties'])->name('dashboard-properties');
     Route::get('/dashboard/add-property', [DashboardController::class, 'addProperty'])->name('add-property');
     Route::post('/dashboard/create-property', [DashboardController::class, 'createProperty'])->name('create-property');
+    Route::post('/dashboard/update-property/{id}', [DashboardController::class, 'updateProperty'])->name('update-property');
 
     Route::get('/dashboard/edit-property/{id}', [DashboardController::class, 'editProperty'])->name('edit-property');
+    Route::post('/dashboard/delete-media/{media_id}', [DashboardController::class, 'deleteMedia'])->name('delete-media');
 });
 
 require __DIR__.'/auth.php';
