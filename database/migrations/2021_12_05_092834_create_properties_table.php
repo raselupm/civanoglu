@@ -16,6 +16,7 @@ class CreatePropertiesTable extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('name_tr');
 
             $table->string('featured_image');
             $table->unsignedBigInteger('location_id');
@@ -24,15 +25,18 @@ class CreatePropertiesTable extends Migration
             $table->unsignedBigInteger('sale')->default(1)->comment('0=rent,1=sale');
             $table->unsignedBigInteger('type')->default(1)->comment('0=land,1=apartment,2=villa');
 
-            $table->unsignedBigInteger('bedrooms')->nullable();
+            $table->string('bedrooms')->nullable();
             $table->unsignedBigInteger('bathrooms')->nullable();
             $table->unsignedBigInteger('net_sqm')->nullable();
             $table->unsignedBigInteger('gross_sqm')->nullable();
             $table->unsignedBigInteger('pool')->nullable()->comment('0=no,1=private,2=public,3=both');
 
             $table->string('overview');
+            $table->string('overview_tr');
             $table->longText('why_buy')->nullable();
+            $table->longText('why_buy_tr')->nullable();
             $table->longText('description');
+            $table->longText('description_tr');
 
             $table->timestamps();
 

@@ -134,3 +134,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 15px;
     min-width: 100%;
 }
+
+
+.civanoglu-label {
+    @apply uppercase text-sm text-gray-600 mb-2 cursor-pointer block
+}
+
+.civanoglu-input {
+    @apply border border-gray-400 w-full px-4 py-2 block
+}

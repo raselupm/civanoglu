@@ -32407,6 +32407,29 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 100%;
 }
 
+.civanoglu-label {
+  margin-bottom: 0.5rem;
+  display: block;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity))
+}
+
+.civanoglu-input {
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
