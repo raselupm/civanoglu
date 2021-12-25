@@ -133,4 +133,22 @@ class DashboardController extends Controller
 
         return redirect(route('dashboard-properties'))->with(['message' => 'Property is saved.']);
     }
+
+    public function deleteProperty($property_id) {
+        $property = Property::findOrFail($property_id);
+        // delete featured image
+        Storage::delete('public/uploads/' . $property->featured_image);
+
+        // delete gallery items
+        foreach($property->gallery as $media) {
+            $media = Media::findOrFail($media->id);
+            Storage::delete('public/uploads/' . $media->name);
+            $media->delete();
+        }
+
+        // delete the property
+        $property->delete();
+
+        return redirect(route('dashboard-properties'))->with(['message' => 'Property is deleted.']);
+    }
 }
