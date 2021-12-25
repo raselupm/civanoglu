@@ -32275,6 +32275,7 @@ select {
 }
 
 body {
+  font-family: 'Studio Sans DEMO', sans-serif;
 }
 
 .container {
@@ -32428,6 +32429,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem
+}
+
+.required-text {
+  --tw-text-opacity: 1;
+  color: rgba(239, 68, 68, var(--tw-text-opacity));
+  font-family: sans-serif;
 }
 
 @media (min-width: 640px) {
