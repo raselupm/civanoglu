@@ -27,7 +27,7 @@ class DashboardController extends Controller
         $request->validate([
             'name' => 'required',
             'name_tr' => 'required',
-            //'featured_image' => 'required|image',
+            'featured_image' => 'required|image',
             'location_id' => 'required',
             'price' => 'required|integer',
             'sale' => 'integer',
