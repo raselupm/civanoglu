@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/dashboard/messages', [DashboardController::class, 'messages'])->name('dashboard-messages');
     Route::get('/dashboard/message/{id}', [DashboardController::class, 'singleMessage'])->name('message');
-    Route::post('/dashboard/delete-message/{id}', [DashboardController::class, 'deleteMessage'])->name('delete-message');
+    Route::delete('/dashboard/delete-message/{id}', [DashboardController::class, 'deleteMessage'])->name('delete-message');
 });
 
 require __DIR__.'/auth.php';

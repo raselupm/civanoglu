@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Location;
 use App\Models\Media;
 use App\Models\Property;
@@ -23,6 +24,17 @@ class DashboardController extends Controller
 
         // remove row
         $media->delete();
+
+        return back();
+    }
+
+    public function messages() {
+        return view('admin.message.index', ['messages' => Contact::latest()->paginate(30)]);
+    }
+
+    public function deleteMessage($message_id) {
+        $contact = Contact::findOrFail($message_id);
+        $contact->delete();
 
         return back();
     }
