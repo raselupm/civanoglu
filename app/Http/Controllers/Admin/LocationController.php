@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Page;
-use Flasher\Prime\FlasherInterface;
+use App\Models\Location;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,26 +15,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        $pages = Page::latest()->paginate(20);
-        return view('admin.page.index', ['pages' => $pages]);
-    }
+        $locations = Location::latest()->paginate(20);
 
-
-
-    public function validatePage() {
-        return [
-            'name' => 'required',
-            'slug' => 'required',
-            'content' => 'required'
-        ];
-    }
-
-    public function saveOrUpdate($page, $request) {
-        $page->name = $request->name;
-        $page->slug = $request->slug;
-        $page->content = $request->slug;
-
-        $page->save();
+        return view('admin.location.index', ['locations' => $locations]);
     }
 
     /**
@@ -43,10 +25,9 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function create()
     {
-        return view('admin.page.create');
+        return view('admin.location.create');
     }
 
     /**
@@ -57,13 +38,15 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->validatePage());
+        $request->validate([
+            'name' => 'required'
+        ]);
 
-        $page = new Page();
+        $location = new Location();
+        $location->name = $request->name;
+        $location->save();
 
-        $this->saveOrUpdate($page, $request);
-
-        return redirect(route('dashboard-page.index'));
+        return  redirect(route('dashboard-location.index'));
     }
 
     /**
@@ -85,9 +68,9 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        $page = Page::findOrFail($id);
+        $location = Location::findOrFail($id);
 
-        return view('admin.page.edit', ['page' => $page]);
+        return view('admin.location.edit', ['location' => $location]);
     }
 
     /**
@@ -99,14 +82,15 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $page = Page::findOrFail($id);
+        $request->validate([
+            'name' => 'required'
+        ]);
 
-        $request->validate($this->validatePage());
+        $location = Location::findOrFail($id);
+        $location->name = $request->name;
+        $location->save();
 
-
-        $this->saveOrUpdate($page, $request);
-
-        return redirect(route('dashboard-page.index'));
+        return  redirect(route('dashboard-location.index'));
     }
 
     /**
@@ -115,13 +99,11 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, FlasherInterface $flasher)
+    public function destroy($id)
     {
-        $page = Page::findOrFail($id);
-        $page->delete();
+        $location = Location::findOrFail($id);
+        $location->delete();
 
-        $flasher->addSuccess('Page has been deleted.');
-
-        return back();
+        return  redirect(route('dashboard-location.index'));
     }
 }

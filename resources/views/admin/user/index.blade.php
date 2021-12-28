@@ -2,11 +2,11 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Pages') }}
+                {{ __('Users') }}
             </h2>
 
             <div class="min-w-max">
-                <a href="{{route('dashboard-page.create')}}" class="fullwidth-btn">Add New Page</a>
+                <a href="{{route('dashboard-user.create')}}" class="fullwidth-btn">Add New User</a>
             </div>
         </div>
 
@@ -20,17 +20,16 @@
                         <thead>
                         <tr>
                             <th class="border px-4 py-2">Name</th>
-                            <th style="width: 250px" class="border px-4 py-2">Actions</th>
+                            <th style="width: 200px" class="border px-4 py-2">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($pages as $page)
+                        @foreach($users as $user)
                             <tr>
-                                <td class="border px-4 py-2">{{$page->name}}</td>
+                                <td class="border px-4 py-2">{{$user->name}}</td>
                                 <td class="border px-4 py-2 text-center">
-                                    <a class="bg-blue-500 text-white px-4 py-2 text-xs rounded" href="{{route('dashboard-page.edit', $page->id)}}">Edit</a>
-                                    <a class="bg-green-500 text-white px-4 py-2 text-xs rounded" target="_blank" href="{{route('page', $page->slug)}}" target="_blank">View</a>
-                                    <form onsubmit="return confirm('Do you really want to delete the location?');" action="{{route('dashboard-page.destroy', $page->id)}}" method="post" class="inline-block"> @csrf @method('delete')
+                                    <a class="bg-blue-500 text-white px-4 py-2 text-xs rounded" href="{{route('dashboard-user.edit', $user->id)}}">Edit</a>
+                                    <form onsubmit="return confirm('Do you really want to delete the location?');" action="{{route('dashboard-user.destroy', $user->id)}}" method="post" class="inline-block"> @csrf @method('delete')
                                         <button style="height: 27px;top:1.5px" type="submit" class="bg-red-500 text-white px-4 py-2 text-xs rounded relative">Delete</button>
                                     </form>
                                 </td>
@@ -39,7 +38,7 @@
                         </tbody>
                     </table>
 
-                    {{$pages->links()}}
+                    {{$users->links()}}
                 </div>
             </div>
         </div>

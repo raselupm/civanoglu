@@ -6,7 +6,7 @@
             </h2>
 
             <div class="min-w-max">
-                <a href="{{route('dashboard-properties')}}" class="fullwidth-btn">Back</a>
+                <a href="{{route('dashboard-property.index')}}" class="fullwidth-btn">Back</a>
             </div>
         </div>
     </x-slot>
@@ -33,7 +33,7 @@
                 </div>
 
 
-                <form action="{{route('update-property', $property->id)}}" method="post" class="p-6 bg-white border-b border-gray-200"> @csrf
+                <form action="{{route('dashboard-property.update', $property->id)}}" method="post" class="p-6 bg-white border-b border-gray-200"> @csrf @method('put')
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
                             <label class="civanoglu-label" for="name">Title <span class="required-text">*</span></label>
@@ -56,7 +56,7 @@
 
                     <div class="mb-6">
                         <label class="civanoglu-label" for="featured_image">Featured Image <span class="required-text">*</span></label>
-                        <input class="civanoglu-input" type="file" id="featured_image" name="featured_image" required>
+                        <input class="civanoglu-input" type="file" id="featured_image" name="featured_image">
 
                         <div class="mt-3">
                             <img src="/uploads/{{$property->featured_image}}" alt="">
@@ -69,7 +69,7 @@
 
                     <div class="mb-6">
                         <label class="civanoglu-label" for="gallery_images">Gallery images <span class="required-text">*</span></label>
-                        <input class="civanoglu-input" type="file" id="gallery_images" name="gallery_images[]" multiple required>
+                        <input class="civanoglu-input" type="file" id="gallery_images" name="gallery_images[]" multiple>
 
                         @error('gallery_images')
                         <p class="text-red-500 mt-2 text-sm">{{$message}}</p>

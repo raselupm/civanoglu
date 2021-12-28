@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Page;
-use Flasher\Prime\FlasherInterface;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,26 +15,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        $pages = Page::latest()->paginate(20);
-        return view('admin.page.index', ['pages' => $pages]);
-    }
-
-
-
-    public function validatePage() {
-        return [
-            'name' => 'required',
-            'slug' => 'required',
-            'content' => 'required'
-        ];
-    }
-
-    public function saveOrUpdate($page, $request) {
-        $page->name = $request->name;
-        $page->slug = $request->slug;
-        $page->content = $request->slug;
-
-        $page->save();
+        $users = User::latest()->paginate(30);
+        return  view('admin.user.index', ['users' => $users]);
     }
 
     /**
@@ -43,10 +24,9 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function create()
     {
-        return view('admin.page.create');
+        //
     }
 
     /**
@@ -57,13 +37,7 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->validatePage());
-
-        $page = new Page();
-
-        $this->saveOrUpdate($page, $request);
-
-        return redirect(route('dashboard-page.index'));
+        //
     }
 
     /**
@@ -85,9 +59,7 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        $page = Page::findOrFail($id);
-
-        return view('admin.page.edit', ['page' => $page]);
+        //
     }
 
     /**
@@ -99,14 +71,7 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $page = Page::findOrFail($id);
-
-        $request->validate($this->validatePage());
-
-
-        $this->saveOrUpdate($page, $request);
-
-        return redirect(route('dashboard-page.index'));
+        //
     }
 
     /**
@@ -115,13 +80,8 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, FlasherInterface $flasher)
+    public function destroy($id)
     {
-        $page = Page::findOrFail($id);
-        $page->delete();
-
-        $flasher->addSuccess('Page has been deleted.');
-
-        return back();
+        //
     }
 }
