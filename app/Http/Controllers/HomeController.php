@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use App\Models\Page;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -19,5 +20,17 @@ class HomeController extends Controller
             'latest_properties' => $latest_properties,
             'locations' => $locations
         ]);
+    }
+
+    public function singlePage($slug) {
+        $page = Page::where('slug', $slug)->first();
+
+        if(!empty($page)) {
+            return view('page', [
+                'page' => $page
+            ]);
+        } else {
+            return abort('404');
+        }
     }
 }

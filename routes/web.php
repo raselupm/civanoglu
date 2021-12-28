@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\Admin\PageController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -26,7 +26,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('/property/{id}', [PropertyController::class, 'single'])->name('single-property');
     Route::get('/location/{id}', [LocationController::class, 'single'])->name('single-location');
     Route::get('/properties/', [PropertyController::class, 'index'])->name('properties');
-    Route::get('/page/{slug}', [PageController::class, 'single'])->name('page');
+    Route::get('/page/{slug}', [HomeController::class, 'singlePage'])->name('page');
     Route::post('/property-inquiry/{id}', [ContactController::class, 'propertyInquiry'])->name('property-inquiry');
 });
 
@@ -50,12 +50,14 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/dashboard/delete-location/{id}', [DashboardController::class, 'deleteLocation'])->name('delete-location');
     Route::get('/dashboard/edit-location/{id}', [DashboardController::class, 'editLocation'])->name('edit-location');
 
-    Route::get('/dashboard/pages', [DashboardController::class, 'pages'])->name('dashboard-pages');
-    Route::get('/dashboard/add-page', [DashboardController::class, 'addPage'])->name('add-page');
-    Route::post('/dashboard/create-page', [DashboardController::class, 'createPage'])->name('create-page');
-    Route::post('/dashboard/update-page/{id}', [DashboardController::class, 'updatePage'])->name('update-page');
-    Route::post('/dashboard/delete-page/{id}', [DashboardController::class, 'deletePage'])->name('delete-page');
-    Route::get('/dashboard/edit-page/{id}', [DashboardController::class, 'editPage'])->name('edit-page');
+    Route::resource('dashboard-page', PageController::class);
+
+//    Route::get('/dashboard/page', [DashboardController::class, 'pages'])->name('dashboard-pages');
+//    Route::get('/dashboard/add-page', [DashboardController::class, 'addPage'])->name('add-page');
+//    Route::post('/dashboard/create-page', [DashboardController::class, 'createPage'])->name('create-page');
+//    Route::post('/dashboard/update-page/{id}', [DashboardController::class, 'updatePage'])->name('update-page');
+//    Route::post('/dashboard/delete-page/{id}', [DashboardController::class, 'deletePage'])->name('delete-page');
+//    Route::get('/dashboard/edit-page/{id}', [DashboardController::class, 'editPage'])->name('edit-page');
 
     Route::get('/dashboard/users', [DashboardController::class, 'users'])->name('dashboard-users');
     Route::get('/dashboard/add-user', [DashboardController::class, 'addUser'])->name('add-user');

@@ -24,7 +24,7 @@
                         {{ __('Locations') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('dashboard-pages')" :active="request()->routeIs('dashboard-pages')">
+                    <x-nav-link :href="route('dashboard-page.index')" :active="request()->routeIs('dashboard-page.index')">
                         {{ __('Pages') }}
                     </x-nav-link>
 
