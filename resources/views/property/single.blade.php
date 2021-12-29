@@ -13,35 +13,8 @@
     <!-- Title & Share -->
     <div class="bg-white py-8">
         <div class="container mx-auto">
-            <div class="flex justify-between">
-                <div class="w-8/12">
-                    <h2 class="text-3xl text-gray-600">{{$property->name}}</h2>
-                    <h3 class="text-lg mt-2">Price: <span class="text-red-800">{{ number_format($property->price, 2, ',', ',') }} TL</span></h3>
-                </div>
-                <div class="w-3/12">
-                    <ul class="flex justify-end -mr-2">
-                        <li>
-                            <a class="flex flex-col justify-center items-center mx-2 border-2 border-gray-200 p-3 hover:border-red-400 duration-200"
-                               href="#">
-                                <i class="fa fa-print mb-2"></i>
-                                <span class="text-md block">Print</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex flex-col justify-center items-center mx-2 border-2 border-gray-200 p-3 hover:border-red-400 duration-200"
-                               href="#">
-                                <i class="fa fa-heart-o mb-2"></i>
-                                <span class="text-md block">Save</span></a>
-                        </li>
-                        <li>
-                            <a class="flex flex-col justify-center items-center mx-2 border-2 border-gray-200 p-3 hover:border-red-400 duration-200"
-                               href="#">
-                                <i class="fa fa-share-alt mb-2"></i>
-                                <span class="text-md block">Share</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <h2 class="text-3xl text-gray-600">{{$property->name}}</h2>
+            <h3 class="text-lg mt-2">Price: <span class="text-red-800">{{ number_format($property->price, 2, ',', ',') }} TL</span></h3>
         </div>
     </div>
 
@@ -168,9 +141,6 @@
 
             {{-- Sidebar --}}
             <div class="w-3/12 ml-6">
-                <div class="border-2 border-red-800 px-5 py-3 text-center font-light text-base">
-                    <p>Subscribe to Property Turkey media for blogs/news/videos</p>
-                </div>
                 {{-- Form --}}
                 <div class="px-4 py-5 text-left bg-gray-300 my-5">
                     <h1 class="text-2xl font-normal leading-none mb-5">Enquire about this property</h1>

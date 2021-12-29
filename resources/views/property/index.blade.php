@@ -34,7 +34,7 @@
 
             {{-- Left Content --}}
             <div class="w-9/12">
-                <div class="flex flex-wrap -mx-2 mt-10">
+                <div class="flex flex-wrap -mx-3">
                     @foreach($latest_properties as $property)
                         @include('components.single-property-card', ['property' => $property, 'width' => 'w-1/3'])
                     @endforeach
