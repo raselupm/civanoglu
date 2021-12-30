@@ -14,7 +14,7 @@
     <div class="bg-white py-8">
         <div class="container mx-auto">
             <h2 class="text-3xl text-gray-600">{{$property->name}}</h2>
-            <h3 class="text-lg mt-2">Price: <span class="text-red-800">{{ number_format($property->price, 2, ',', ',') }} TL</span></h3>
+            <h3 class="text-lg mt-2">Price: <span class="text-red-800">{{$property->dynamic_pricing($property->price)}}</span></h3>
         </div>
     </div>
 

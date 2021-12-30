@@ -6,7 +6,7 @@ use App\Models\Location;
 use App\Models\Page;
 use App\Models\Property;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
@@ -84,5 +84,11 @@ class HomeController extends Controller
 
 
         return view('property.index', ['latest_properties' => $latest_properties, 'locations' => $locations]);
+    }
+
+    public function currencyChange($code) {
+        Cookie::queue('currency', $code, 3600);
+
+        return back();
     }
 }

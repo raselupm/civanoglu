@@ -14,8 +14,8 @@
     </div>
 
     <div class="min-w-max mr-10 text-2xl">
-        <a class="inline-block mr-5 text-white" href="?currency=usd">$</a>
-        <a class="inline-block mr-5 text-white" href="?currency=lira">₺</a>
+        <a class="inline-block mr-5 text-white" href="{{route('currency-change', 'usd')}}">$</a>
+        <a class="inline-block mr-5 text-white" href="{{route('currency-change', 'tl')}}">₺</a>
     </div>
 
     <div class="min-w-max text-3xl">
