@@ -2,8 +2,8 @@
     <div class="relative z-10 pt-48 pb-52 bg-cover bg-center" style="background-image: url(/img/hero-bg.jpg)">
         <div class="absolute h-full w-full bg-black opacity-70 top-0 left-0 z-10"></div>
         <div class="container relative z-20 text-white text-center text-2xl">
-            <h2 class="font-bold text-5xl mb-8">Lorem ipsum dolor sit amet,<br/> consectetur adipisicing elit. Fuga, totam.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, mollitia.</p>
+            <h2 class="font-bold text-5xl mb-8">Find your best property,<br/> And live quality life.</h2>
+            <p>We will try finding the best one for you. Please search using the form below.</p>
         </div>
     </div>
 
@@ -17,7 +17,17 @@
         </div>
     </div>
 
-    <div class="py-20 text-center">
+    <!-- Last Added Objects -->
+    <div class="container pt-14">
+        <h2 class="section-heading">Best properties</h2>
+        <div class="flex flex-wrap -mx-2 mt-10">
+            @foreach($latest_properties as $property)
+                @include('components.single-property-card', ['property' => $property, 'width' => 'w-1/4'])
+            @endforeach
+        </div>
+    </div>
+
+    <div class="py-10 text-center">
         <div class="container">
             <h2 class="section-heading">Lorem ipsum dolor sit amet, consectetur<br/> adipisicing elit. A aut autem dolorum <span class="underline">quis vitae!</span></h2>
             <p class="text-gray-500 text-2xl font-bold mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, voluptatem!</p>
@@ -106,25 +116,14 @@
             </div>
         </div>
     </div>
-    <div class="container pt-14">
-        <div class="flex justify-center items-center">
-            <a href="" class="btn">Start searching with filters</a>
-            <p class="mx-10">or</p>
-            <a href="" class="btn-outline">Start searching on the map</a>
-        </div>
-    </div>
-
-    <!-- Last Added Objects -->
-    <div class="container py-14">
-        <h2 class="section-heading">Last added objusts</h2>
-        <div class="flex flex-wrap -mx-2 mt-10">
-
-            @foreach($latest_properties as $property)
-                @include('components.single-property-card', ['property' => $property, 'width' => 'w-1/4'])
-            @endforeach
+{{--    <div class="container pt-14">--}}
+{{--        <div class="flex justify-center items-center">--}}
+{{--            <a href="" class="btn">Start searching with filters</a>--}}
+{{--            <p class="mx-10">or</p>--}}
+{{--            <a href="" class="btn-outline">Start searching on the map</a>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 
-        </div>
-    </div>
 
 </x-guest-layout>

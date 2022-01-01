@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('dashboard-location', LocationController::class);
     Route::resource('dashboard-page', PageController::class);
     Route::resource('dashboard-user', UserController::class);
+    Route::resource('dashboard-post', UserController::class);
 
     Route::get('/dashboard/messages', [DashboardController::class, 'messages'])->name('dashboard-messages');
     Route::get('/dashboard/message/{id}', [DashboardController::class, 'singleMessage'])->name('message');

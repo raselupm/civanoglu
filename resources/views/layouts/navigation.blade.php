@@ -35,6 +35,10 @@
                     <x-nav-link :href="route('dashboard-messages')" :active="request()->routeIs('dashboard-messages')">
                         {{ __('Messages') }}
                     </x-nav-link>
+
+                    <div class="min-w-max items-center flex">
+                        <a class="px-6 py-2 rounded text-white bg-green-500" href="{{route('home')}}" target="_blank">Frontend</a>
+                    </div>
                 </div>
             </div>
 
