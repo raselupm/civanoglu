@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "civan/civanoglu",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Official website of Civanoğlu Gayrimenkul",
+    "keywords": ["laravel", "website", "real estate"],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
