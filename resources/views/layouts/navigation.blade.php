@@ -12,32 +12,20 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard-index')" :active="request()->routeIs('dashboard-index')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard-index')" :active="request()->routeIs('dashboard-index')">Gösterge Paneli</x-nav-link>
 
-                    <x-nav-link :href="route('dashboard-property.index')" :active="request()->routeIs('dashboard-property.index')">
-                        {{ __('Properties') }}
-                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard-property.index')" :active="request()->routeIs('dashboard-property.index')">Özellikler</x-nav-link>
 
-                    <x-nav-link :href="route('dashboard-location.index')" :active="request()->routeIs('dashboard-location.index')">
-                        {{ __('Locations') }}
-                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard-location.index')" :active="request()->routeIs('dashboard-location.index')">Konumlar</x-nav-link>
 
-                    <x-nav-link :href="route('dashboard-page.index')" :active="request()->routeIs('dashboard-page.index')">
-                        {{ __('Pages') }}
-                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard-page.index')" :active="request()->routeIs('dashboard-page.index')">Sayfalar</x-nav-link>
 
-                    <x-nav-link :href="route('dashboard-user.index')" :active="request()->routeIs('dashboard-user.index')">
-                        {{ __('Users') }}
-                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard-user.index')" :active="request()->routeIs('dashboard-user.index')">Kullanıcılar</x-nav-link>
 
-                    <x-nav-link :href="route('dashboard-messages')" :active="request()->routeIs('dashboard-messages')">
-                        {{ __('Messages') }}
-                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard-messages')" :active="request()->routeIs('dashboard-messages')">Mesajlar</x-nav-link>
 
                     <div class="min-w-max items-center flex">
-                        <a class="px-6 py-2 rounded text-white bg-green-500" href="{{route('home')}}" target="_blank">Frontend</a>
+                        <a class="px-6 py-2 rounded text-white bg-green-500" href="{{route('home')}}" target="_blank">İnternet sitesi</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +53,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Çıkış Yap') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -107,7 +95,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Çıkış Yap') }}
                     </x-responsive-nav-link>
                 </form>
             </div>
