@@ -20,10 +20,10 @@
 
     <!-- Content -->
     <div class="container mx-auto py-10">
-        <div class="flex justify-between">
+        <div class="md:flex md:justify-between">
 
             {{-- Left Content --}}
-            <div class="w-9/12">
+            <div class="md:w-9/12">
                 <div id="slider" class="">
                     <div class="gallery-slider mb-4">
                         @foreach($property->gallery as $gallery)
@@ -40,23 +40,23 @@
                     </div>
                 </div>
                 {{-- Overview --}}
-                <div class="flex justify-between items-center bg-white p-8 mt-10 shadow-sm">
-                    <h4 class="text-lg w-2/12">Overview</h4>
-                    <div class="border-l-2 border-gray-300 pl-5 ml-5 w-10/12 text-base">
+                <div class="md:flex justify-between items-center bg-white p-4 md:p-8 mt-10 shadow-sm">
+                    <h4 class="text-lg md:w-2/12 mb-3 md:mb-0">Overview</h4>
+                    <div class="md:border-l-2 md:border-gray-300 md:pl-5 md:ml-5 md:w-10/12 text-base">
                         <p>{{$property->overview}}</p>
                     </div>
                 </div>
 
                 {{-- Property Featuers --}}
-                <div class="flex justify-between items-center bg-white p-8 mt-10 shadow-sm">
-                    <h4 class="text-lg w-2/12">Property Features</h4>
-                    <div class="ml-2 w-10/12 text-base flex justify-between">
-                        <div class="flex-1 border-l-2 border-gray-300 ml-3 pl-3 self-center">
-                            <ul>
-                                <li class="flex text-sm mb-2">
-                                    <div class="flex"><i
-                                            class="fa fa-home mr-2 text-red-400 w-5 text-center"></i><span
-                                            class="text-sm">Type:</span></div>
+                <div class="md:flex justify-between items-center bg-white p-4 md:p-8 mt-10 shadow-sm">
+                    <h4 class="text-lg md:w-2/12 mb-3 md:mb-0">Property Features</h4>
+                    <div class="md:ml-2 md:w-10/12 text-base md:flex flex-wrap md:flex-auto justify-between">
+                        <div class="md:flex-1 md:border-l-2 md:border-gray-300 md:ml-3 mb-2 md:mb-0 md:pl-3 self-center">
+                            <ul class="flex md:block">
+                                <li class="flex text-sm mb-2 mr-4 md:mr-0">
+                                    <div class="flex">
+                                        <span class="text-sm">Type:</span>
+                                    </div>
                                     <span class="ml-2 font-bold">
                                         @if($property->type == 1)
                                             Apartment
@@ -68,40 +68,35 @@
                                     </span>
                                 </li>
                                 <li class="flex text-sm">
-                                    <div class="flex"><i
-                                            class="fa fa-bed mr-2 text-red-400 w-5 text-center"></i><span
+                                    <div class="flex"><span
                                             class="text-sm">Bedrooms:</span></div>
                                     <span class="ml-2 font-bold">{{$property->bedrooms}}</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="flex-1 border-l-2 border-gray-300 ml-3 pl-3 self-center">
-                            <ul>
-                                <li class="flex text-sm mb-2">
-                                    <div class="flex"><i
-                                            class="fa fa-shower mr-2 text-red-400 w-5 text-center"></i><span
+                        <div class="md:flex-1 md:border-l-2 md:border-gray-300 md:ml-3 mb-2 md:mb-0 md:pl-3 self-center">
+                            <ul class="flex md:block">
+                                <li class="flex text-sm mb-2 mr-4 md:mr-0">
+                                    <div class="flex"><span
                                             class="text-sm">Bathrooms:</span></div>
                                     <span class="ml-2 font-bold">{{$property->bathrooms}}</span>
                                 </li>
                                 <li class="flex text-sm">
-                                    <div class="flex"><i
-                                            class="fa fa-map-marker mr-2 text-red-400 w-5 text-center"></i><span
+                                    <div class="flex"><span
                                             class="text-sm">Location:</span></div>
                                     <span class="ml-2 font-bold">{{$property->location->name}}</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="flex-1 border-l-2 border-gray-300 ml-3 pl-3 self-center">
-                            <ul>
-                                <li class="flex text-sm mb-2">
-                                    <div class="flex"><i
-                                            class="fa fa-gratipay mr-2 text-red-400 w-5 text-center"></i><span
+                        <div class="md:flex-1 md:border-l-2 md:border-gray-300 md:ml-3 mb-2 md:mb-0 md:pl-3 self-center">
+                            <ul class="flex md:block">
+                                <li class="flex text-sm mb-2 mr-4 md:mr-0">
+                                    <div class="flex"><span
                                             class="text-sm">Living space sqm:</span></div>
                                     <span class="ml-2 font-bold">327</span>
                                 </li>
                                 <li class="flex text-sm">
-                                    <div class="flex"><i
-                                            class="fa fa-low-vision mr-2 text-red-400 w-5 text-center"></i><span
+                                    <div class="flex"><span
                                             class="text-sm">Pool</span></div>
                                     <span class="ml-2 font-bold">
                                         @if($property->pool == 1)
@@ -121,17 +116,17 @@
                 </div>
 
                 {{-- Overview --}}
-                <div class="flex justify-between items-center bg-white p-8 mt-10 shadow-sm">
-                    <h4 class="text-lg w-2/12">Why buy this Property</h4>
-                    <div class="border-l-2 border-gray-300 pl-5 ml-5 w-10/12 text-base">
+                <div class="md:flex md:justify-between items-center bg-white p-4 md:p-8 mt-10 shadow-sm">
+                    <h4 class="text-lg md:w-2/12 mb-3 md:mb-0">Why buy this Property</h4>
+                    <div class="md:border-l-2 md:border-gray-300 md:pl-5 md:ml-5 md:w-10/12 text-base">
                         {{$property->why_buy}}
                     </div>
                 </div>
 
                 {{-- Description --}}
-                <div class="bg-white p-8 mt-10 shadow-sm" id="description">
+                <div class="bg-white p-4 md:p-8 mt-10 shadow-sm" id="description">
 
-                    <h2 class="font-bold mb-5 text-2xl"> FACILITIES &amp; LOCATION</h2>
+                    <h2 class="font-bold mb-5 text-xl md:text-2xl"> FACILITIES &amp; LOCATION</h2>
 
                     {{$property->description}}
 
@@ -142,7 +137,7 @@
 
 
             {{-- Sidebar --}}
-            <div class="w-3/12 ml-6">
+            <div class="md:w-3/12 mt-6 md:ml-6 md:mt-0">
                 {{-- Form --}}
                 <div class="px-4 py-5 text-left bg-gray-300">
                     <h1 class="text-2xl font-normal leading-none mb-5">Enquire about this property</h1>

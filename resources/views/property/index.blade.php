@@ -30,13 +30,13 @@
 
     <!-- Content -->
     <div class="container mx-auto py-10">
-        <div class="flex justify-between">
+        <div class="md:flex justify-between">
 
             {{-- Left Content --}}
-            <div class="w-9/12">
+            <div class="md:w-9/12">
                 <div class="flex flex-wrap -mx-3">
                     @foreach($latest_properties as $property)
-                        @include('components.single-property-card', ['property' => $property, 'width' => 'w-1/3'])
+                        @include('components.single-property-card', ['property' => $property, 'width' => 'w-full md:w-1/3'])
                     @endforeach
                 </div>
 
@@ -47,7 +47,7 @@
 
 
             {{-- Sidebar --}}
-            <div class="w-3/12 ml-6 vertical-search-form">
+            <div class="md:w-3/12 md:ml-6 mt-10 md:mt-0 vertical-search-form">
                 @include('components.property-search-form')
             </div>
 
