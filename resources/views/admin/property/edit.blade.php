@@ -175,6 +175,20 @@
                         </div>
 
                         <div class="flex-1 px-4">
+                            <label class="civanoglu-label" for="kitchens">Mutfaklar</label>
+                            <select class="civanoglu-input"  name="kitchens" id="kitchens">
+                                <option value="">Birini seç</option>
+                                @for($x = 0; $x <= 6; $x++)
+                                    <option {{$property->kitchens == $x ? 'selected="selected"' : ''}} value="{{$x}}">{{$x}}</option>
+                                @endfor
+                            </select>
+
+                            @error('kitchens')
+                            <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
+                            @enderror
+                        </div>
+
+                        <div class="flex-1 px-4">
                             <label class="civanoglu-label" for="net_sqm">Net metrekare <span class="required-text">*</span></label>
                             <input class="civanoglu-input" type="number" id="net_sqm" name="net_sqm" value="{{$property->net_sqm}}" required>
 

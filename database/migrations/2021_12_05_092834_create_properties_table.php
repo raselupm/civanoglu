@@ -28,6 +28,7 @@ class CreatePropertiesTable extends Migration
             $table->unsignedBigInteger('bedrooms')->nullable();
             $table->unsignedBigInteger('drawing_rooms')->nullable();
             $table->unsignedBigInteger('bathrooms')->nullable();
+            $table->unsignedBigInteger('kitchens')->nullable();
             $table->unsignedBigInteger('net_sqm')->nullable();
             $table->unsignedBigInteger('gross_sqm')->nullable();
             $table->unsignedBigInteger('pool')->nullable()->comment('0=no,1=private,2=public,3=both');

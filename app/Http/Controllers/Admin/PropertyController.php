@@ -74,6 +74,7 @@ class PropertyController extends Controller
         $property->type = $request->type;
         $property->bedrooms = $request->bedrooms;
         $property->bathrooms = $request->bathrooms;
+        $property->kitchens = $request->kitchens;
         $property->drawing_rooms = $request->drawing_rooms;
         $property->net_sqm = $request->net_sqm;
         $property->gross_sqm = $request->gross_sqm;

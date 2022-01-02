@@ -151,6 +151,20 @@
                         </div>
 
                         <div class="flex-1 px-4">
+                            <label class="civanoglu-label" for="kitchens">Mutfaklar</label>
+                            <select class="civanoglu-input"  name="kitchens" id="kitchens">
+                                <option value="">Birini seç</option>
+                                @for($x = 0; $x <= 6; $x++)
+                                    <option {{old('kitchens') == $x ? 'selected="selected"' : ''}} value="{{$x}}">{{$x}}</option>
+                                @endfor
+                            </select>
+
+                            @error('kitchens')
+                            <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
+                            @enderror
+                        </div>
+
+                        <div class="flex-1 px-4">
                             <label class="civanoglu-label" for="net_sqm">Net metrekare <span class="required-text">*</span></label>
                             <input class="civanoglu-input" type="number" id="net_sqm" name="net_sqm" value="{{old('net_sqm')}}"  required>
 
@@ -185,20 +199,21 @@
                     </div>
 
                     <div class="flex -mx-4 mb-6">
-                        <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="overview">genel bakış - ingilizce<span class="required-text">*</span></label>
-                            <textarea class="civanoglu-input" name="overview" id="overview" cols="30" rows="3" required>{{old('overview')}}</textarea>
-
-                            @error('overview')
-                            <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
-                            @enderror
-                        </div>
 
                         <div class="flex-1 px-4">
                             <label class="civanoglu-label" for="overview_tr">genel bakış <span class="required-text">*</span></label>
                             <textarea class="civanoglu-input" name="overview_tr" id="overview_tr" cols="30" rows="3" required>{{old('overview_tr')}}</textarea>
 
                             @error('overview_tr')
+                            <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
+                            @enderror
+                        </div>
+
+                        <div class="flex-1 px-4">
+                            <label class="civanoglu-label" for="overview">genel bakış - ingilizce<span class="required-text">*</span></label>
+                            <textarea class="civanoglu-input" name="overview" id="overview" cols="30" rows="3" required>{{old('overview')}}</textarea>
+
+                            @error('overview')
                             <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                             @enderror
                         </div>
