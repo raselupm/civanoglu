@@ -1,6 +1,5 @@
 require('./bootstrap');
 
-
 import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
@@ -23,6 +22,8 @@ jQuery(window).scroll(function() {
 });
 
 jQuery(document).ready(function ($) {
+
+
     $('.gallery-slider').slick({
         asNavFor: '.thumbnail-slider'
     });
