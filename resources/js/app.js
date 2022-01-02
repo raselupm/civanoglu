@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
         dots: false
     });
     $('.thumbnail-slider').slick({
-        slidesToShow: 8,
+        slidesToShow: 7,
         asNavFor: '.gallery-slider',
         centerMode: true,
         focusOnSelect: true,

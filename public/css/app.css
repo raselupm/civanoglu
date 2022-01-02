@@ -32425,7 +32425,7 @@ select{
 
 .lity-iframe .lity-container,.lity-youtube .lity-container,.lity-vimeo .lity-container,.lity-facebookvideo .lity-container,.lity-googlemaps .lity-container{
   width:100%;
-  max-width:964px
+  padding:5%
 }
 
 .lity-iframe-container{
@@ -32460,6 +32460,15 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+@media (min-width: 768px){
+  .container{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32470,9 +32479,16 @@ h1, h2, h3, h4, h5, h6 {
 .section-heading {
   margin-bottom: 2.5rem;
   text-align: center;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   font-weight: 700
+}
+
+@media (min-width: 768px){
+  .section-heading{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 .btn {
@@ -32652,6 +32668,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .single-thumbnail-item.slick-center > div {
   opacity: 1;
+}
+
+.sticky-header-active .feather-menu {
+  color: #000;
 }
 
 @media (min-width: 640px){

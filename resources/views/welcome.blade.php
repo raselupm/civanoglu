@@ -1,14 +1,14 @@
 <x-guest-layout>
     <div class="relative z-10 pt-48 pb-52 bg-cover bg-center" style="background-image: url(/img/hero-bg.jpg)">
         <div class="absolute h-full w-full bg-black opacity-70 top-0 left-0 z-10"></div>
-        <div class="container relative z-20 text-white text-center text-2xl">
-            <h2 class="font-bold text-5xl mb-8">Find your best property,<br/> And live quality life.</h2>
+        <div class="container relative z-20 text-white text-center text-xl md:text-2xl">
+            <h2 class="font-bold text-3xl md:text-5xl mb-8">Find your best property,<br/> And live quality life.</h2>
             <p>We will try finding the best one for you. Please search using the form below.</p>
         </div>
     </div>
 
     <!-- Search From Area -->
-    <div class="-mt-10">
+    <div class="-mt-20 md:-mt-10">
         <div class="container">
             <div class="rounded-lg bg-white p-4 relative z-20 shadow-lg home-search">
                 @include('components.property-search-form', ['locations' => $locations])
@@ -20,9 +20,9 @@
     <!-- Last Added Objects -->
     <div class="container pt-14">
         <h2 class="section-heading">Best properties</h2>
-        <div class="flex flex-wrap -mx-2 mt-10">
+        <div class="flex flex-wrap -mx-3 mt-10">
             @foreach($latest_properties as $property)
-                @include('components.single-property-card', ['property' => $property, 'width' => 'w-1/4'])
+                @include('components.single-property-card', ['property' => $property, 'width' => 'md:w-1/4 w-full'])
             @endforeach
         </div>
     </div>
@@ -36,34 +36,34 @@
 
             <h2 class="section-heading pt-14">Lorem ipsum dolor sit amet adipisicing<br/> adipisicing elit. A aut lorum </h2>
 
-            <div class="w-4/5 mx-auto">
+            <div class="md:w-4/5 mx-auto">
                 <div class="flex -mx-3 flex-wrap justify-between mt-10">
-                    <div class="w-3/12  mt-10 mx-3">
+                    <div class="w-full md:w-3/12  mt-10 mx-3">
                         <h3 class="mb-2 text-xl">Huge selection of real estate</h3>
                         <p class="text-xs text-center mx-auto w-4/6">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Dolore</p>
                     </div>
-                    <div class="w-3/12  mt-10 mx-3">
+                    <div class="w-full md:w-3/12 mt-10 mx-3">
                         <h3 class="mb-2 text-xl">Huge selection of real estate</h3>
                         <p class="text-xs text-center mx-auto w-4/6">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Dolore</p>
                     </div>
-                    <div class="w-3/12  mt-10 mx-3">
+                    <div class="w-full md:w-3/12 mt-10 mx-3">
                         <h3 class="mb-2 text-xl">Huge selection of real estate</h3>
                         <p class="text-xs text-center mx-auto w-4/6">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Dolore</p>
                     </div>
-                    <div class="w-3/12  mt-10 mx-3">
+                    <div class="w-full md:w-3/12 mt-10 mx-3">
                         <h3 class="mb-2 text-xl">Huge selection of real estate</h3>
                         <p class="text-xs text-center mx-auto w-4/6">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Dolore</p>
                     </div>
-                    <div class="w-3/12  mt-10 mx-3">
+                    <div class="w-full md:w-3/12 mt-10 mx-3">
                         <h3 class="mb-2 text-xl">Huge selection of real estate</h3>
                         <p class="text-xs text-center mx-auto w-4/6">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Dolore</p>
                     </div>
-                    <div class="w-3/12  mt-10 mx-3">
+                    <div class="w-full md:w-3/12 mt-10 mx-3">
                         <h3 class="mb-2 text-xl">Huge selection of real estate</h3>
                         <p class="text-xs text-center mx-auto w-4/6">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Dolore</p>
@@ -99,8 +99,8 @@
 
 
     <div class="container pt-14">
-        <div class="flex justify-between ">
-            <div class="flex-1 mr-10 text-lg leading-normal">
+        <div class="md:flex md:justify-between ">
+            <div class="flex-1 md:mr-10 text-lg leading-normal">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deleniti ipsam iure laborum nemo
                     non odit quis quod, sint tempore. Ab culpa cupiditate error, eum incidunt officiis rem sapiente
                     voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deleniti ipsam iure
@@ -111,7 +111,7 @@
                     deleniti ipsam iure laborum nemo non odit quis quod, sint tempore. Ab culpa cupiditate error, eum
                     incidunt officiis rem sapiente voluptate</p>
             </div>
-            <div class="flex-1 ml-10">
+            <div class="flex-1 md:ml-10 mt-10 md:mt-0">
                 <img class="rounded" src="/img/hero-bg.jpg" alt="">
             </div>
         </div>

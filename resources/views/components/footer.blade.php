@@ -52,15 +52,15 @@
 {{--        </div>--}}
 {{--    </div>--}}
 
-    <div class="flex py-12">
-        <div class="w-1/4 pr-6">
+    <div class="md:flex py-12">
+        <div class="md:w-1/4 md:pr-6">
             <img width="100" src="/img/logo.jpeg" alt="">
             <p class="text-sm mt-12">Lorem ipsum dolor sit amet.</p>
         </div>
 
-        <div class="w-3/4 font-bold leading-8">
-            <div class="flex -mx-6">
-                <div class="flex-1 px-6">
+        <div class="md:w-3/4 font-bold leading-8">
+            <div class="md:flex md:-mx-6">
+                <div class="flex-1 md:px-6 mb-8 md:mb-0">
                     <ul>
                         <li><a href="">Lorem ipsum dolor.</a></li>
                         <li><a href="">Lorem ipsum dolor.</a></li>
@@ -68,7 +68,7 @@
                         <li><a href="">Lorem ipsum dolor.</a></li>
                     </ul>
                 </div>
-                <div class="flex-1 px-6">
+                <div class="flex-1 md:px-6 mb-8 md:mb-0">
                     <ul>
                         <li><a href="">Lorem ipsum dolor.</a></li>
                         <li><a href="">Lorem ipsum dolor.</a></li>
@@ -76,7 +76,7 @@
                         <li><a href="">Lorem ipsum dolor.</a></li>
                     </ul>
                 </div>
-                <div class="flex-1 px-6">
+                <div class="flex-1 md:px-6 mb-8 md:mb-0">
                     <ul>
                         <li><a href="">Lorem ipsum dolor.</a></li>
                         <li><a href="">Lorem ipsum dolor.</a></li>
