@@ -1,5 +1,9 @@
 require('./bootstrap');
 
+import feather from 'feather-icons/dist/feather.min'
+
+feather.replace();
+
 import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
@@ -10,6 +14,7 @@ Alpine.start();
 window.$ = window.jQuery = require('jquery');
 
 require('./slick-1.8.1.min');
+require('./lity.min');
 
 jQuery(window).scroll(function() {
     const scroll = jQuery(window).scrollTop();
@@ -22,8 +27,6 @@ jQuery(window).scroll(function() {
 });
 
 jQuery(document).ready(function ($) {
-
-
     $('.gallery-slider').slick({
         asNavFor: '.thumbnail-slider'
     });

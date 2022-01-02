@@ -21,6 +21,7 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
+        "feather-icons": "^4.28.0",
         "jquery": "^3.6.0"
     }
 }
