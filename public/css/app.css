@@ -32686,6 +32686,14 @@ h1, h2, h3, h4, h5, h6 {
   .single-gallery-item {
     height: 300px;
   }
+
+  .civanoglu-menu-items {
+    display: none;
+  }
+
+  .civanoglu-menu-items.active {
+    display: block;
+  }
 }
 
 @media (min-width: 640px){

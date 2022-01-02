@@ -5507,6 +5507,9 @@ jQuery(document).ready(function ($) {
       }
     }]
   });
+  $(".civanoglu-menu, .civanoglu-menu-items a").on("click", function () {
+    $(".civanoglu-menu-items").toggleClass('active');
+  });
 });
 
 /***/ }),
