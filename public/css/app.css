@@ -32620,6 +32620,40 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block
 }
 
+.slick-arrow {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9;
+  margin-top: -15px;
+}
+
+.slick-arrow.right-icon {
+  left: auto;
+  right: 50px;
+}
+
+.single-thumbnail-item {
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.single-thumbnail-item > div {
+  opacity: .5;
+}
+
+.single-thumbnail-item.slick-center > div {
+  opacity: 1;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;

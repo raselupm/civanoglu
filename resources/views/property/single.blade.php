@@ -25,7 +25,7 @@
             {{-- Left Content --}}
             <div class="w-9/12">
                 <div id="slider" class="">
-                    <div class="gallery-slider">
+                    <div class="gallery-slider mb-4">
                         @foreach($property->gallery as $gallery)
                         <div style="background-image: url({{$gallery->name}})" class="single-gallery-item bg-cover bg-center"></div>
                         @endforeach
@@ -33,7 +33,9 @@
 
                     <div class="thumbnail-slider">
                         @foreach($property->gallery as $gallery)
-                        <div style="background-image: url({{$gallery->name}})" class="single-thumbnail-item bg-cover bg-center"></div>
+                        <div class="single-thumbnail-item">
+                            <div style="background-image: url({{$gallery->name}})" class="bg-cover bg-center h-full w-full"></div>
+                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -142,7 +144,7 @@
             {{-- Sidebar --}}
             <div class="w-3/12 ml-6">
                 {{-- Form --}}
-                <div class="px-4 py-5 text-left bg-gray-300 my-5">
+                <div class="px-4 py-5 text-left bg-gray-300">
                     <h1 class="text-2xl font-normal leading-none mb-5">Enquire about this property</h1>
 
                     @if(Session::get('message'))
