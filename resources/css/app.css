@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #fff;
 }
 
-.sticky-header-active a, .civanoglu-menu-items a{color:#333}
+.sticky-header-active a{color:#333}
 
 .inputField {
     @apply  w-full border-gray-400 block
@@ -214,4 +214,6 @@ h1, h2, h3, h4, h5, h6 {
     .civanoglu-menu-items.active {
         display: block;
     }
+    .civanoglu-menu-items a{color:#333}
+
 }

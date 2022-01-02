@@ -32524,7 +32524,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #fff;
 }
 
-.sticky-header-active a, .civanoglu-menu-items a{
+.sticky-header-active a{
   color:#333
 }
 
@@ -32693,6 +32693,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .civanoglu-menu-items.active {
     display: block;
+  }
+
+  .civanoglu-menu-items a{
+    color:#333
   }
 }
 
