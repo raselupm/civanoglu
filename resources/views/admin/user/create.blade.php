@@ -2,11 +2,11 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Add new user') }}
+                Yeni Kullanıcı Ekle
             </h2>
 
             <div class="min-w-max">
-                <a href="{{route('dashboard-user.index')}}" class="fullwidth-btn">Back</a>
+                <a href="{{route('dashboard-user.index')}}" class="fullwidth-btn">Geri</a>
             </div>
         </div>
     </x-slot>
@@ -16,7 +16,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <form action="{{route('dashboard-user.store')}}" method="post" class="p-6 bg-white border-b border-gray-200" enctype="multipart/form-data"> @csrf
                     <div class="mb-6">
-                        <label class="civanoglu-label" for="name">Name <span class="required-text">*</span></label>
+                        <label class="civanoglu-label" for="name">İsim <span class="required-text">*</span></label>
                         <input class="civanoglu-input" type="text" id="name" name="name" value="{{old('name')}}" required>
 
                         @error('name')
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="mb-6">
-                        <label class="civanoglu-label" for="email">Email address <span class="required-text">*</span></label>
+                        <label class="civanoglu-label" for="email">E-posta <span class="required-text">*</span></label>
                         <input class="civanoglu-input" type="text" id="email" name="email" value="{{old('email')}}" required>
 
                         @error('email')
@@ -35,7 +35,7 @@
 
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="password">Password <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="password">şifre <span class="required-text">*</span></label>
                             <input class="civanoglu-input" type="password" id="password" name="password" value="{{old('password')}}" required>
 
                             @error('password')
@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="password_confirmation">Password confirmation <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="password_confirmation">şifre Onayla <span class="required-text">*</span></label>
                             <input class="civanoglu-input" type="password" id="password_confirmation" name="password_confirmation" value="{{old('password_confirmation')}}" required>
 
                             @error('password_confirmation')
@@ -53,7 +53,7 @@
                         </div>
                     </div>
 
-                    <button class="btn" type="submit">Save</button>
+                    <button class="btn" type="submit">SaveKayıt etmek</button>
                 </form>
             </div>
         </div>
